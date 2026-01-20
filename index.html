@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NAVIX - AI-powered career navigation and guidance platform for students">
+  <title>NAVIX - Navigate Your Future</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ug-styles.css">
+  <link rel="stylesheet" href="dark-theme-additions.css">
+</head>
+
+
+<body>
+  <!-- ========================================
+       SPLASH SCREEN WITH ANIMATION
+  ======================================== -->
+  <div id="splash-screen" class="splash-container">
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <div class="splash-content">
+      <div class="logo-container">
+        <div class="logo-icon">🧭</div>
+        <h1 class="logo-text">NAVIX</h1>
+      </div>
+      <p class="splash-tagline">Navigate Your Future</p>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       LOGIN SCREEN
+  ======================================== -->
+  <div id="login-screen" class="login-container hidden">
+    <div class="login-background">
+      <div class="login-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    </div>
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-logo">🧭</div>
+        <h2>Welcome to NAVIX</h2>
+        <p class="login-subtitle">Your AI-powered career guide</p>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label class="form-label">📛 Your Name</label>
+          <input type="text" id="user-name" class="form-input" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">📧 Email</label>
+          <input type="email" id="user-email" class="form-input" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">🎓 Current Grade</label>
+          <select id="user-grade" class="form-select" required>
+            <option value="">Select your grade</option>
+            <option value="10th">10th Standard</option>
+            <option value="11th">11th Standard</option>
+            <option value="12th">12th Standard</option>
+            <option value="college">College</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+          🚀 Get Started
+        </button>
+      </form>
+
+      <p class="login-footer">By continuing, you agree to our Terms of Service</p>
+    </div>
+  </div>
+
+  <div class="app-container" id="main-app" style="display: none;">
+
+    <!-- ========================================
+         SCREEN 1: HOME
+    ======================================== -->
+    <div id="home-screen" class="screen active">
+      <div class="text-center mb-lg">
+        <h1>🧭 NAVIX</h1>
+        <p class="subtitle">Navigate Your Future</p>
+        <p class="subtitle">Smart career guidance powered by AI</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large card-primary" data-navigate="after10th-screen">
+          <div class="card-icon">🏫</div>
+          <h2 class="card-title">After 10th</h2>
+          <p class="card-description">Explore stream options and career paths</p>
+        </div>
+
+        <div class="card card-large card-secondary" data-navigate="after12th-screen">
+          <div class="card-icon">🎓</div>
+          <h2 class="card-title">After 12+</h2>
+          <p class="card-description">Discover degree programs and courses</p>
+        </div>
+
+        <div class="card card-large" data-navigate="ug-screen"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">🎓</div>
+          <h2 class="card-title">Under Graduation (UG)</h2>
+          <p class="card-description">Semester papers, workshops & internships</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN 2: AFTER 10TH STREAMS
+    ======================================== -->
+    <div id="after10th-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">After 10th</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" data-navigate="science-screen"
+          style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">🔬</div>
+          <h3 class="card-title">Science</h3>
+          <p class="card-description">MPC, BiPC pathways</p>
+        </div>
+
+        <div class="card card-large" data-navigate="arts-screen"
+          style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%); color: white;">
+          <div class="card-icon">🎨</div>
+          <h3 class="card-title">Arts</h3>
+          <p class="card-description">CEC, HEC options</p>
+        </div>
+
+        <div class="card card-large" data-navigate="vocational-screen"
+          style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white;">
+          <div class="card-icon">🛠️</div>
+          <h3 class="card-title">Vocational</h3>
+          <p class="card-description">IT, MLT, ET, CSE</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN 3: SCIENCE OPTIONS
+    ======================================== -->
+    <div id="science-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Science Stream</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large card-primary" data-navigate="course-mpc">
+          <div class="card-icon">📐</div>
+          <h3 class="card-title">MPC</h3>
+          <p class="card-description">Maths, Physics, Chemistry</p>
+        </div>
+
+        <div class="card card-large card-secondary" data-navigate="course-bipc">
+          <div class="card-icon">🧬</div>
+          <h3 class="card-title">BiPC</h3>
+          <p class="card-description">Biology, Physics, Chemistry</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN 4: ARTS OPTIONS
+    ======================================== -->
+    <div id="arts-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Arts Stream</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" data-navigate="course-cec"
+          style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%); color: white;">
+          <div class="card-icon">📊</div>
+          <h3 class="card-title">CEC</h3>
+          <p class="card-description">Civics, Economics, Commerce</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-hec"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">🌍</div>
+          <h3 class="card-title">HEC</h3>
+          <p class="card-description">History, Economics, Civics</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN 5: VOCATIONAL OPTIONS
+    ======================================== -->
+    <div id="vocational-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Vocational Courses</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" data-navigate="course-it"
+          style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white;">
+          <div class="card-icon">💻</div>
+          <h3 class="card-title">IT</h3>
+          <p class="card-description">Information Technology</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-mlt"
+          style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+          <div class="card-icon">🧪</div>
+          <h3 class="card-title">MLT</h3>
+          <p class="card-description">Medical Lab Technology</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-et"
+          style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); color: white;">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">ET</h3>
+          <p class="card-description">Electronics Technology</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-cse"
+          style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">🖥️</div>
+          <h3 class="card-title">CSE</h3>
+          <p class="card-description">Computer Science Engineering</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN 6: AFTER +12 COURSES
+    ======================================== -->
+    <div id="after12th-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">After 12+</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" data-navigate="course-btech"
+          style="background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">🏗️</div>
+          <h3 class="card-title">B.Tech</h3>
+          <p class="card-description">Bachelor of Technology</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-be"
+          style="background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%); color: white;">
+          <div class="card-icon">⚙️</div>
+          <h3 class="card-title">BE</h3>
+          <p class="card-description">Bachelor of Engineering</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-mbbs"
+          style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); color: white;">
+          <div class="card-icon">🩺</div>
+          <h3 class="card-title">MBBS</h3>
+          <p class="card-description">Bachelor of Medicine</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-bcom"
+          style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+          <div class="card-icon">💼</div>
+          <h3 class="card-title">B.Com</h3>
+          <p class="card-description">Bachelor of Commerce</p>
+        </div>
+
+        <div class="card card-large" data-navigate="course-ba"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">📚</div>
+          <h3 class="card-title">BA</h3>
+          <p class="card-description">Bachelor of Arts</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         COURSE DETAILS TEMPLATE (B.TECH EXAMPLE)
+    ======================================== -->
+    <div id="course-btech" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Course Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="course-hero">
+        <div class="card-icon">🏗️</div>
+        <h1>B.Tech</h1>
+        <p>Bachelor of Technology</p>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">🎯</span>
+          Career Overview
+        </h3>
+        <p>B.Tech is a 4-year undergraduate degree focused on engineering and technology. It's ideal for students
+          passionate about innovation, problem-solving, and building solutions that shape the future.</p>
+        <p><strong>Popular Specializations:</strong> Computer Science, Mechanical, Electrical, Civil, Electronics, IT
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">📝</span>
+          Eligibility & Entrance Exams
+        </h3>
+        <p><strong>Eligibility:</strong> 10+2 with Physics, Chemistry, Mathematics (PCM) with minimum 60-75% marks</p>
+        <p><strong>Key Entrance Exams:</strong></p>
+        <ul>
+          <li>JEE Main (All India)</li>
+          <li>JEE Advanced (IITs)</li>
+          <li>BITSAT (BITS Pilani)</li>
+          <li>State Engineering Exams (KCET, EAMCET, MHT-CET)</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">🛣️</span>
+          Step-by-Step Roadmap
+        </h3>
+        <p><strong>Year 1-2 (11th-12th):</strong></p>
+        <ul>
+          <li>Focus on PCM fundamentals</li>
+          <li>Start JEE preparation by 11th</li>
+          <li>Take mock tests regularly</li>
+        </ul>
+        <p><strong>Final Year:</strong></p>
+        <ul>
+          <li>Complete 12th boards with 75%+</li>
+          <li>Appear for JEE Main & Advanced</li>
+          <li>Participate in counseling</li>
+        </ul>
+        <p><strong>During B.Tech:</strong></p>
+        <ul>
+          <li>Build projects and practical skills</li>
+          <li>Internships from 2nd year</li>
+          <li>Prepare for placements</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">🧠</span>
+          Expert Guidance
+        </h3>
+        <p>💡 <strong>Pro Tip:</strong> Don't just focus on theory. Start coding/building from day one if choosing
+          CSE/IT. Practical skills matter more than marks.</p>
+        <p>⚠️ <strong>Common Mistake:</strong> Many students ignore board exams while preparing for JEE. Balance both -
+          boards are equally important!</p>
+        <p>✅ <strong>Success Mantra:</strong> Consistent daily practice > Last-minute cramming</p>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">📚</span>
+          Books & Learning Resources
+        </h3>
+        <p><strong>For JEE Preparation:</strong></p>
+        <ul>
+          <li>Physics: HC Verma, DC Pandey</li>
+          <li>Chemistry: NCERT + OP Tandon</li>
+          <li>Maths: RD Sharma, Cengage Series</li>
+        </ul>
+        <p><strong>Online Resources:</strong> Khan Academy, Physics Wallah, Unacademy, NPTEL</p>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">💰</span>
+          Careers & Salary Outlook
+        </h3>
+        <p><strong>Career Options:</strong> Software Engineer, Data Scientist, Mechanical Engineer, Automation Engineer,
+          Product Manager, Research Scientist</p>
+        <p><strong>Average Starting Salary:</strong></p>
+        <ul>
+          <li>Tier-1 Colleges (IITs/NITs): ₹12-25 LPA</li>
+          <li>Good Private Colleges: ₹6-12 LPA</li>
+          <li>Average Colleges: ₹3-6 LPA</li>
+        </ul>
+        <p><strong>Peak Salary (5-10 years):</strong> ₹20-50 LPA+ (can go much higher in tech/product roles)</p>
+      </div>
+    </div>
+
+    <!-- Additional course detail screens would follow the same template -->
+    <!-- For brevity, I'll add placeholders that can be expanded -->
+
+    <div id="course-mpc" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">MPC Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero">
+        <div class="card-icon">📐</div>
+        <h1>MPC Stream</h1>
+        <p>Maths, Physics, Chemistry</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>MPC opens doors to engineering, technology, and research careers. Perfect for students who love
+          problem-solving and analytical thinking.</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🛣️</span> Future Pathways</h3>
+        <p>After MPC, you can pursue: B.Tech, BE, BSc, Integrated MSc, or professional courses like CA, CS.</p>
+      </div>
+    </div>
+
+    <div id="course-bipc" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">BiPC Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+        <div class="card-icon">🧬</div>
+        <h1>BiPC Stream</h1>
+        <p>Biology, Physics, Chemistry</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>BiPC is the gateway to medical and life sciences. Ideal for students passionate about healthcare, research,
+          and helping people.</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🛣️</span> Future Pathways</h3>
+        <p>After BiPC: MBBS, BDS, BAMS, Nursing, Pharmacy, Biotechnology, Physiotherapy, Veterinary Science.</p>
+      </div>
+    </div>
+
+    <!-- Placeholder screens for other courses -->
+    <div id="course-cec" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">CEC Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);">
+        <div class="card-icon">📊</div>
+        <h1>CEC Stream</h1>
+        <p>Civics, Economics, Commerce</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>CEC prepares you for business, finance, and management careers. Perfect for future entrepreneurs and finance
+          professionals.</p>
+      </div>
+    </div>
+
+    <div id="course-hec" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">HEC Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+        <div class="card-icon">🌍</div>
+        <h1>HEC Stream</h1>
+        <p>History, Economics, Civics</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>HEC offers a humanities-focused education leading to careers in civil services, law, journalism, and social
+          sciences.</p>
+      </div>
+    </div>
+
+    <!-- Additional vocational and degree course placeholders -->
+    <div id="course-it" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">IT Course</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+        <div class="card-icon">💻</div>
+        <h1>Information Technology</h1>
+        <p>Vocational IT Course</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>Hands-on IT training for immediate job readiness. Learn programming, networking, and web development.</p>
+      </div>
+    </div>
+
+    <div id="course-mlt" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">MLT Course</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+        <div class="card-icon">🧪</div>
+        <h1>Medical Lab Technology</h1>
+        <p>Vocational Healthcare Course</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>Train as a medical lab technician. Essential role in healthcare diagnostics and patient care.</p>
+      </div>
+    </div>
+
+    <div id="course-et" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">ET Course</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">
+        <div class="card-icon">⚡</div>
+        <h1>Electronics Technology</h1>
+        <p>Vocational Electronics Course</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>Learn electronics repair, circuit design, and embedded systems for technical careers.</p>
+      </div>
+    </div>
+
+    <div id="course-cse" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">CSE Course</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+        <div class="card-icon">🖥️</div>
+        <h1>Computer Science Engineering</h1>
+        <p>Vocational CS Course</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>Intensive computer science training with focus on software development and programming.</p>
+      </div>
+    </div>
+
+    <div id="course-be" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">BE Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #0891B2 0%, #0E7490 100%);">
+        <div class="card-icon">⚙️</div>
+        <h1>BE - Bachelor of Engineering</h1>
+        <p>4-Year Engineering Degree</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>Similar to B.Tech but more theory-focused. Strong foundation in engineering principles.</p>
+      </div>
+    </div>
+
+    <div id="course-mbbs" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">MBBS Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">
+        <div class="card-icon">🩺</div>
+        <h1>MBBS</h1>
+        <p>Bachelor of Medicine, Bachelor of Surgery</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>5.5-year medical degree to become a doctor. Requires NEET qualification and dedication to help people.</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">📝</span> Entrance Exam</h3>
+        <p><strong>NEET:</strong> National Eligibility Entrance Test. One of the toughest exams requiring 1-2 years of
+          focused preparation.</p>
+      </div>
+    </div>
+
+    <div id="course-bcom" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">B.Com Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+        <div class="card-icon">💼</div>
+        <h1>B.Com</h1>
+        <p>Bachelor of Commerce</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>3-year commerce degree covering accounting, finance, taxation, and business. Great foundation for CA, MBA, or
+          finance careers.</p>
+      </div>
+    </div>
+
+    <div id="course-ba" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">BA Details</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+      <div class="course-hero" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+        <div class="card-icon">📚</div>
+        <h1>BA</h1>
+        <p>Bachelor of Arts</p>
+      </div>
+      <div class="section-card">
+        <h3 class="section-title"><span class="icon">🎯</span> Career Overview</h3>
+        <p>3-year humanities degree with diverse specializations: Psychology, Sociology, English, History, Political
+          Science, and more.</p>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG SECTION: GRADUATION TYPE SELECTION
+    ======================================== -->
+    <div id="ug-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Under Graduation</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>🎓 Choose Your Graduation Type</h2>
+        <p class="subtitle">Select your degree program to explore resources</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" data-navigate="ug-btech-departments"
+          style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">🏗️</div>
+          <h3 class="card-title">B.Tech / BE</h3>
+          <p class="card-description">Engineering degrees</p>
+        </div>
+
+        <div class="card card-large" data-navigate="ug-bsc-departments"
+          style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+          <div class="card-icon">🔬</div>
+          <h3 class="card-title">B.Sc</h3>
+          <p class="card-description">Science degrees</p>
+        </div>
+
+        <div class="card card-large" data-navigate="ug-bca-departments"
+          style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white;">
+          <div class="card-icon">💻</div>
+          <h3 class="card-title">BCA</h3>
+          <p class="card-description">Computer Applications</p>
+        </div>
+
+        <div class="card card-large" data-navigate="ug-bcom-departments"
+          style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%); color: white;">
+          <div class="card-icon">💼</div>
+          <h3 class="card-title">BBA / B.Com</h3>
+          <p class="card-description">Business & Commerce</p>
+        </div>
+
+        <div class="card card-large" data-navigate="ug-other-departments"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">📚</div>
+          <h3 class="card-title">Others</h3>
+          <p class="card-description">More degree programs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG: B.TECH/BE DEPARTMENTS
+    ======================================== -->
+    <div id="ug-btech-departments" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">B.Tech / BE Departments</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>🏗️ Choose Your Department</h2>
+        <p class="subtitle">Select your engineering specialization</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" onclick="navigateToUGDashboard('cse', 'Computer Science Engineering')"
+          style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">💻</div>
+          <h3 class="card-title">CSE</h3>
+          <p class="card-description">Computer Science Engineering</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('ece', 'Electronics & Communication')"
+          style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); color: white;">
+          <div class="card-icon">📡</div>
+          <h3 class="card-title">ECE</h3>
+          <p class="card-description">Electronics & Communication</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('eee', 'Electrical & Electronics')"
+          style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white;">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">EEE</h3>
+          <p class="card-description">Electrical & Electronics</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('mechanical', 'Mechanical Engineering')"
+          style="background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%); color: white;">
+          <div class="card-icon">⚙️</div>
+          <h3 class="card-title">Mechanical</h3>
+          <p class="card-description">Mechanical Engineering</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('civil', 'Civil Engineering')"
+          style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+          <div class="card-icon">🏗️</div>
+          <h3 class="card-title">Civil</h3>
+          <p class="card-description">Civil Engineering</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('it', 'Information Technology')"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">🖥️</div>
+          <h3 class="card-title">IT</h3>
+          <p class="card-description">Information Technology</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG: B.SC DEPARTMENTS
+    ======================================== -->
+    <div id="ug-bsc-departments" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">B.Sc Specializations</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>🔬 Choose Your Specialization</h2>
+        <p class="subtitle">Select your science focus area</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" onclick="navigateToUGDashboard('bsc-cs', 'B.Sc Computer Science')"
+          style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">💻</div>
+          <h3 class="card-title">Computer Science</h3>
+          <p class="card-description">Programming & Algorithms</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('bsc-physics', 'B.Sc Physics')"
+          style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); color: white;">
+          <div class="card-icon">⚛️</div>
+          <h3 class="card-title">Physics</h3>
+          <p class="card-description">Physical Sciences</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('bsc-chemistry', 'B.Sc Chemistry')"
+          style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+          <div class="card-icon">🧪</div>
+          <h3 class="card-title">Chemistry</h3>
+          <p class="card-description">Chemical Sciences</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('bsc-maths', 'B.Sc Mathematics')"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">📐</div>
+          <h3 class="card-title">Mathematics</h3>
+          <p class="card-description">Pure & Applied Maths</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG: BCA DEPARTMENTS
+    ======================================== -->
+    <div id="ug-bca-departments" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">BCA Specializations</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>💻 Choose Your Specialization</h2>
+        <p class="subtitle">Focus area for Computer Applications</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" onclick="navigateToUGDashboard('bca-core', 'BCA Core')"
+          style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white;">
+          <div class="card-icon">💻</div>
+          <h3 class="card-title">Core BCA</h3>
+          <p class="card-description">General Computer Applications</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('bca-data-science', 'BCA Data Science')"
+          style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+          <div class="card-icon">📊</div>
+          <h3 class="card-title">Data Science</h3>
+          <p class="card-description">Analytics & ML</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG: BBA/BCOM DEPARTMENTS
+    ======================================== -->
+    <div id="ug-bcom-departments" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">BBA / B.Com Specializations</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>💼 Choose Your Specialization</h2>
+        <p class="subtitle">Business & Commerce focus areas</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" onclick="navigateToUGDashboard('bcom-accounting', 'B.Com Accounting')"
+          style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+          <div class="card-icon">📊</div>
+          <h3 class="card-title">Accounting</h3>
+          <p class="card-description">Financial Accounting</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('bba-finance', 'BBA Finance')"
+          style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%); color: white;">
+          <div class="card-icon">💰</div>
+          <h3 class="card-title">Finance</h3>
+          <p class="card-description">Financial Management</p>
+        </div>
+
+        <div class="card card-large" onclick="navigateToUGDashboard('bba-marketing', 'BBA Marketing')"
+          style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white;">
+          <div class="card-icon">📢</div>
+          <h3 class="card-title">Marketing</h3>
+          <p class="card-description">Marketing Management</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG: OTHER DEPARTMENTS
+    ======================================== -->
+    <div id="ug-other-departments" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Other Programs</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>📚 More Degree Programs</h2>
+        <p class="subtitle">Additional undergraduate options</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card card-large" onclick="navigateToUGDashboard('ba', 'Bachelor of Arts')"
+          style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+          <div class="card-icon">📚</div>
+          <h3 class="card-title">BA</h3>
+          <p class="card-description">Bachelor of Arts</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         UG DASHBOARD (DYNAMIC)
+    ======================================== -->
+    <div id="ug-dashboard" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title" id="ug-dashboard-title">UG Dashboard</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2 id="ug-dashboard-header">🎓 Department Resources</h2>
+        <p class="subtitle" id="ug-dashboard-subtitle">Access all your study materials and opportunities</p>
+      </div>
+
+      <!-- UG Dashboard Tabs -->
+      <div class="ug-tabs">
+        <button class="ug-tab active" onclick="switchUGTab('workshops')">🛠️ Workshops</button>
+        <button class="ug-tab" onclick="switchUGTab('internships')">💼 Internships</button>
+        <button class="ug-tab" onclick="switchUGTab('projects')">🚀 Demo Projects</button>
+        <button class="ug-tab" onclick="switchUGTab('papers')">📄 Model Papers</button>
+      </div>
+
+      <!-- Workshops Tab -->
+      <div id="ug-tab-workshops" class="ug-tab-content active">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">🛠️</span>
+            Available Workshops
+          </h3>
+          <div id="workshops-container" class="card-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Internships Tab -->
+      <div id="ug-tab-internships" class="ug-tab-content hidden">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">💼</span>
+            Internship Opportunities
+          </h3>
+          <div id="internships-container" class="card-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Projects Tab -->
+      <div id="ug-tab-projects" class="ug-tab-content hidden">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">🚀</span>
+            Demo Projects & Videos
+          </h3>
+          <div id="projects-container" class="card-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Model Papers Tab -->
+      <div id="ug-tab-papers" class="ug-tab-content hidden">
+        <div class="disclaimer-banner">
+          ⚠️ <strong>Note:</strong> All papers shown here are sample/reference papers generated or curated by NAVIX for
+          practice and guidance. They are not official university papers.
+        </div>
+
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">📚</span>
+            Choose Semester
+          </h3>
+          <div id="semester-grid" class="semester-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <div id="subjects-container" class="hidden">
+          <button class="btn btn-ghost" onclick="backToSemesters()" style="margin-bottom: 1rem;">
+            ⬅️ Back to Semesters
+          </button>
+          <div class="section-card">
+            <h3 class="section-title">
+              <span class="icon">📖</span>
+              <span id="semester-title">Semester Subjects</span>
+            </h3>
+            <div id="subjects-list" class="card-grid">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN: SMART TIMETABLE GENERATOR
+    ======================================== -->
+    <div id="timetable-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Smart Timetable</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>📅 Generate Your Study Schedule</h2>
+        <p class="subtitle">Answer a few questions and get a personalized study timetable powered by AI</p>
+      </div>
+
+      <div id="timetable-form">
+        <div class="section-card">
+          <div class="form-group">
+            <label class="form-label">How many hours can you study daily?</label>
+            <input type="range" id="study-hours" class="form-input" min="2" max="12" value="6"
+              oninput="document.getElementById('hours-display').textContent = this.value">
+            <div style="text-align: center; margin-top: 0.5rem; font-weight: 600; color: var(--color-primary);">
+              <span id="hours-display">6</span> hours/day
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Target Exam/Goal Date</label>
+            <input type="date" id="exam-date" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Wake Up Time</label>
+            <input type="time" id="wake-time" class="form-input" value="06:00">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Select Your Subjects (hold Ctrl/Cmd for multiple)</label>
+            <select id="subjects" class="form-select" multiple size="6">
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="English">English</option>
+              <option value="History">History</option>
+              <option value="Economics">Economics</option>
+              <option value="Computer Science">Computer Science</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" id="generate-timetable" style="width: 100%; margin-top: 1rem;">
+            ✨ Generate My Timetable
+          </button>
+        </div>
+      </div>
+
+      <div id="timetable-result" class="hidden">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">📚</span>
+            Your Personalized Study Schedule
+          </h3>
+          <div id="timetable-grid" class="timetable-grid"></div>
+        </div>
+
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">💡</span>
+            Smart Tips
+          </h3>
+          <ul id="study-tips">
+            <li>Take a 10-minute break every hour</li>
+            <li>Revise previous day's topics in the morning</li>
+            <li>Practice problems daily, don't just read theory</li>
+            <li>Sleep at least 7-8 hours for better retention</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-secondary"
+          onclick="document.getElementById('timetable-result').classList.add('hidden'); document.getElementById('timetable-form').classList.remove('hidden');"
+          style="width: 100%; margin-top: 1rem;">
+          🔄 Create New Timetable
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN: CAREER ROADMAP
+    ======================================== -->
+    <div id="roadmap-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Career Roadmap</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>🛣️ Your Career Journey</h2>
+        <p class="subtitle">A step-by-step guide to reach your career goals</p>
+      </div>
+
+      <div class="roadmap-container">
+        <div class="roadmap-milestone milestone-current">
+          <div class="milestone-icon">📍</div>
+          <div class="milestone-content">
+            <h3>Current Position</h3>
+            <p><strong>Where you are now</strong></p>
+            <ul>
+              <li>Exploring career options</li>
+              <li>Understanding your interests</li>
+              <li>Planning your educational path</li>
+            </ul>
+            <div class="milestone-status status-current">You are here</div>
+          </div>
+        </div>
+
+        <div class="roadmap-connector"></div>
+
+        <div class="roadmap-milestone">
+          <div class="milestone-icon">🎯</div>
+          <div class="milestone-content">
+            <h3>Short-term Goals (6-12 months)</h3>
+            <p><strong>Immediate next steps</strong></p>
+            <ul>
+              <li>Complete current grade with good marks</li>
+              <li>Choose the right stream/course</li>
+              <li>Start entrance exam preparation if needed</li>
+              <li>Build strong fundamentals in core subjects</li>
+            </ul>
+            <div class="milestone-status status-upcoming">Upcoming</div>
+          </div>
+        </div>
+
+        <div class="roadmap-connector"></div>
+
+        <div class="roadmap-milestone">
+          <div class="milestone-icon">🚀</div>
+          <div class="milestone-content">
+            <h3>Medium-term Goals (1-3 years)</h3>
+            <p><strong>Building your foundation</strong></p>
+            <ul>
+              <li>Excel in chosen stream/degree program</li>
+              <li>Gain practical skills through projects</li>
+              <li>Participate in internships/workshops</li>
+              <li>Build a strong portfolio/resume</li>
+              <li>Network with professionals in your field</li>
+            </ul>
+            <div class="milestone-status status-future">Future</div>
+          </div>
+        </div>
+
+        <div class="roadmap-connector"></div>
+
+        <div class="roadmap-milestone">
+          <div class="milestone-icon">🏆</div>
+          <div class="milestone-content">
+            <h3>Long-term Goals (3-5+ years)</h3>
+            <p><strong>Achieving your vision</strong></p>
+            <ul>
+              <li>Secure your dream job/college</li>
+              <li>Become an expert in your field</li>
+              <li>Pursue advanced studies if desired (Masters/PhD)</li>
+              <li>Contribute to your industry</li>
+              <li>Achieve financial independence</li>
+            </ul>
+            <div class="milestone-status status-future">Future</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card" style="margin-top: 2rem;">
+        <h3 class="section-title">
+          <span class="icon">💡</span>
+          Success Tips
+        </h3>
+        <p><strong>Remember:</strong> Every successful person started where you are. The journey is as important as the
+          destination!</p>
+        <ul>
+          <li>✅ Set specific, measurable goals for each milestone</li>
+          <li>✅ Review and adjust your roadmap every 3 months</li>
+          <li>✅ Celebrate small wins along the way</li>
+          <li>✅ Don't compare your chapter 1 with someone's chapter 20</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN: PROFILE
+    ======================================== -->
+    <div id="profile-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Profile</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="profile-header">
+        <div class="profile-avatar">👤</div>
+        <h2 id="profile-name">NAVIX User</h2>
+        <p class="subtitle">Future achiever 🌟</p>
+        <div class="coin-display" style="margin-top: 1rem; display: inline-flex;">
+          <span class="coin-icon">🪙</span>
+          <span class="coin-count" id="profile-coins">100</span>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">🎓</span>
+          Academic Information
+        </h3>
+        <div class="profile-info-grid">
+          <div class="profile-info-item">
+            <div class="info-label">Current Grade</div>
+            <div class="info-value" id="profile-grade">10th / +12</div>
+          </div>
+          <div class="profile-info-item">
+            <div class="info-label">Stream/Interest</div>
+            <div class="info-value" id="profile-stream">Science / Engineering</div>
+          </div>
+          <div class="profile-info-item">
+            <div class="info-label">Target Exam</div>
+            <div class="info-value" id="profile-exam">JEE / NEET</div>
+          </div>
+          <div class="profile-info-item">
+            <div class="info-label">Career Goal</div>
+            <div class="info-value" id="profile-career">Software Engineer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">🔖</span>
+          Saved Courses
+        </h3>
+        <div class="saved-courses">
+          <div class="saved-course-item">
+            <span class="course-icon">🏗️</span>
+            <div>
+              <div class="course-name">B.Tech</div>
+              <div class="course-subtitle">Bachelor of Technology</div>
+            </div>
+          </div>
+          <div class="saved-course-item">
+            <span class="course-icon">🖥️</span>
+            <div>
+              <div class="course-name">CSE</div>
+              <div class="course-subtitle">Computer Science Engineering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">📈</span>
+          Learning Progress
+        </h3>
+        <div class="progress-stats">
+          <div class="stat-item">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Day Streak 🔥</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Courses Explored</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Timetables Created</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">45</div>
+            <div class="stat-label">AI Chats</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3 class="section-title">
+          <span class="icon">🏅</span>
+          Achievements
+        </h3>
+        <div class="achievements-grid">
+          <div class="achievement-badge earned">
+            <div class="badge-icon">🎯</div>
+            <div class="badge-name">Goal Setter</div>
+          </div>
+          <div class="achievement-badge earned">
+            <div class="badge-icon">🔥</div>
+            <div class="badge-name">7-Day Streak</div>
+          </div>
+          <div class="achievement-badge earned">
+            <div class="badge-icon">🧭</div>
+            <div class="badge-name">Explorer</div>
+          </div>
+          <div class="achievement-badge">
+            <div class="badge-icon">⚡</div>
+            <div class="badge-name">Speed Learner</div>
+          </div>
+          <div class="achievement-badge">
+            <div class="badge-icon">💎</div>
+            <div class="badge-name">Consistent</div>
+          </div>
+          <div class="achievement-badge">
+            <div class="badge-icon">🌟</div>
+            <div class="badge-name">Master</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-ghost" style="width: 100%; margin-top: 1rem;">
+        ⚙️ Edit Profile
+      </button>
+    </div>
+
+    <!-- ========================================
+         SCREEN: QUIZZES
+    ======================================== -->
+    <div id="quiz-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Quizzes</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2>🎮 Test Your Knowledge</h2>
+            <p class="subtitle">Earn coins for correct answers!</p>
+          </div>
+          <div class="coin-display">
+            <span class="coin-icon">🪙</span>
+            <span class="coin-count" id="coin-balance">100</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="quiz-selection">
+        <div class="card-grid">
+          <div class="card card-large" onclick="startQuiz('jee')"
+            style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white;">
+            <div class="card-icon">📐</div>
+            <h3 class="card-title">JEE Practice</h3>
+            <p class="card-description">Physics, Chemistry, Maths</p>
+            <div class="quiz-reward">+50 coins</div>
+          </div>
+
+          <div class="card card-large" onclick="startQuiz('neet')"
+            style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+            <div class="card-icon">🧬</div>
+            <h3 class="card-title">NEET Practice</h3>
+            <p class="card-description">Biology, Physics, Chemistry</p>
+            <div class="quiz-reward">+50 coins</div>
+          </div>
+
+          <div class="card card-large" onclick="startQuiz('general')"
+            style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); color: white;">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">General Aptitude</h3>
+            <p class="card-description">Reasoning & Logic</p>
+            <div class="quiz-reward">+30 coins</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="quiz-game" class="hidden">
+        <div class="section-card">
+          <div class="quiz-header">
+            <div class="quiz-progress">
+              Question <span id="current-question">1</span>/<span id="total-questions">5</span>
+            </div>
+            <div class="quiz-score">
+              Score: <span id="quiz-score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h3 id="question-text" class="quiz-question">Question will appear here</h3>
+          <div id="quiz-options" class="quiz-options">
+            <!-- Options will be dynamically inserted -->
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn btn-secondary" id="hint-btn" onclick="useHint()">
+              💡 Use Hint (-20 coins)
+            </button>
+            <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" style="display: none;">
+              Next Question →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="quiz-result" class="hidden">
+        <div class="section-card text-center">
+          <div class="result-icon">🎉</div>
+          <h2>Quiz Complete!</h2>
+          <div class="result-stats">
+            <div class="stat-item">
+              <div class="stat-number" id="final-score">0</div>
+              <div class="stat-label">Correct Answers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="coins-earned">0</div>
+              <div class="stat-label">Coins Earned 🪙</div>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="returnToQuizSelection()" style="margin-top: 2rem;">
+            Choose Another Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SCREEN: RESOURCES & MODEL PAPERS
+    ======================================== -->
+    <div id="resources-screen" class="screen">
+      <div class="top-nav">
+        <button class="btn btn-icon btn-ghost" data-action="back">⬅️</button>
+        <div class="nav-title">Resources</div>
+        <button class="btn btn-icon btn-ghost" data-action="home">🏠</button>
+      </div>
+
+      <div class="section-card">
+        <h2>📚 Exam Resources</h2>
+        <p class="subtitle">Previous year papers and practice materials</p>
+      </div>
+
+      <!-- Tabs for different exams -->
+      <div class="resource-tabs">
+        <button class="resource-tab active" onclick="switchResourceTab('jee')">JEE</button>
+        <button class="resource-tab" onclick="switchResourceTab('neet')">NEET</button>
+        <button class="resource-tab" onclick="switchResourceTab('emcet')">EMCET</button>
+        <button class="resource-tab" onclick="switchResourceTab('boards')">Boards</button>
+      </div>
+
+      <!-- JEE Resources -->
+      <div id="resources-jee" class="resource-content">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">📄</span>
+            JEE Main - Previous Year Papers
+          </h3>
+          <div class="resource-list">
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">JEE Main 2024 - Paper 1</div>
+                <div class="resource-meta">January Session • All Subjects</div>
+              </div>
+              <a href="https://jeemain.nta.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">JEE Main 2023 - Complete Set</div>
+                <div class="resource-meta">Both Sessions • With Solutions</div>
+              </div>
+              <a href="https://jeemain.nta.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">JEE Main 2022 - Full Papers</div>
+                <div class="resource-meta">All Shifts • Detailed Solutions</div>
+              </div>
+              <a href="https://jeemain.nta.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">🎯</span>
+            JEE Advanced Papers
+          </h3>
+          <div class="resource-list">
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">JEE Advanced 2024</div>
+                <div class="resource-meta">Paper 1 & 2 • IIT Delhi</div>
+              </div>
+              <a href="https://jeeadv.ac.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">JEE Advanced 2023</div>
+                <div class="resource-meta">Complete Set • IIT Guwahati</div>
+              </div>
+              <a href="https://jeeadv.ac.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEET Resources -->
+      <div id="resources-neet" class="resource-content hidden">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">📄</span>
+            NEET - Previous Year Papers
+          </h3>
+          <div class="resource-list">
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">NEET 2024 Question Paper</div>
+                <div class="resource-meta">Complete Paper • All Codes</div>
+              </div>
+              <a href="https://neet.nta.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">NEET 2023 with Solutions</div>
+                <div class="resource-meta">Detailed Explanations</div>
+              </div>
+              <a href="https://neet.nta.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">NEET 2022 Complete Set</div>
+                <div class="resource-meta">Physics, Chemistry, Biology</div>
+              </div>
+              <a href="https://neet.nta.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMCET Resources -->
+      <div id="resources-emcet" class="resource-content hidden">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">📄</span>
+            EMCET - Previous Year Papers
+          </h3>
+          <div class="resource-list">
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">TS EAMCET 2024</div>
+                <div class="resource-meta">Engineering Stream</div>
+              </div>
+              <a href="https://eamcet.tsche.ac.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">AP EAMCET 2024</div>
+                <div class="resource-meta">Both Shifts • All Subjects</div>
+              </div>
+              <a href="https://apeamcet.nic.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">EAMCET 2023 Complete</div>
+                <div class="resource-meta">With Answer Keys</div>
+              </div>
+              <a href="https://eamcet.tsche.ac.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Board Exam Resources -->
+      <div id="resources-boards" class="resource-content hidden">
+        <div class="section-card">
+          <h3 class="section-title">
+            <span class="icon">📄</span>
+            Board Exam Resources
+          </h3>
+          <div class="resource-list">
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">CBSE Class 12 Sample Papers 2024</div>
+                <div class="resource-meta">All Subjects</div>
+              </div>
+              <a href="https://cbse.gov.in/" target="_blank" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+            <div class="resource-item">
+              <span class="resource-icon">📎</span>
+              <div class="resource-info">
+                <div class="resource-name">State Board Model Papers</div>
+                <div class="resource-meta">Science & Arts Streams</div>
+              </div>
+              <a href="#" class="btn btn-ghost btn-sm">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========================================
+       BOTTOM NAVIGATION
+  ======================================== -->
+  <nav class="bottom-nav">
+    <div class="nav-item" data-navigate="home-screen">
+      <div class="icon">🏠</div>
+      <div>Home</div>
+    </div>
+    <div class="nav-item" data-navigate="quiz-screen">
+      <div class="icon">🎮</div>
+      <div>Quizzes</div>
+    </div>
+    <div class="nav-item" data-navigate="resources-screen">
+      <div class="icon">📚</div>
+      <div>Resources</div>
+    </div>
+    <div class="nav-item" id="roadmap-nav">
+      <div class="icon">🛣️</div>
+      <div>Roadmap</div>
+    </div>
+    <div class="nav-item" id="ai-nav">
+      <div class="icon">🤖</div>
+      <div>AI Mentor</div>
+    </div>
+    <div class="nav-item" id="profile-nav">
+      <div class="icon">👤</div>
+      <div>Profile</div>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       FLOATING AI BUTTON
+  ======================================== -->
+  <button class="ai-fab" id="ai-fab">🤖</button>
+
+  <!-- ========================================
+       CHAT INTERFACE
+  ======================================== -->
+  <div class="chat-container" id="chat-container">
+    <div class="chat-header">
+      <h3>🤖 NAVIX AI Mentor</h3>
+      <button class="btn btn-icon btn-ghost" id="close-chat" style="color: white;">✖️</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="message ai">
+        <div class="message-bubble">
+          👋 Hi! I'm your NAVIX AI Mentor. I'm here to help you navigate your career path. Ask me anything about
+          courses, exams, or career planning!
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Ask me anything...">
+      <button class="btn btn-primary" id="send-message">➤</button>
+    </div>
+  </div>
+
+  <script src="subject-topic-data.js"></script>
+  <script src="roadmap-data.js"></script>
+  <script src="deep-resources.js"></script>
+  <script src="puzzle-games.js"></script>
+  <script src="department-hub.js"></script>
+  <script src="ug-data.js"></script>
+  <script src="advanced-features.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
