@@ -1,0 +1,377 @@
+/* ============ ADDITIONAL DARK THEME STYLES & ANIMATIONS ============ */
+
+/* Career-themed floating icons for splash screen */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.15;
+    animation: floatIcon 15s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px var(--color-primary-glow));
+}
+
+.floating-icon:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.floating-icon:nth-child(2) {
+    left: 80%;
+    top: 10%;
+    animation-delay: 2s;
+}
+
+.floating-icon:nth-child(3) {
+    left: 20%;
+    top: 70%;
+    animation-delay: 4s;
+}
+
+.floating-icon:nth-child(4) {
+    left: 70%;
+    top: 60%;
+    animation-delay: 1s;
+}
+
+.floating-icon:nth-child(5) {
+    left: 50%;
+    top: 30%;
+    animation-delay: 3s;
+}
+
+.floating-icon:nth-child(6) {
+    left: 30%;
+    top: 50%;
+    animation-delay: 5s;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.15;
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(5deg) scale(1.1);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-5deg) scale(1);
+        opacity: 0.15;
+    }
+
+    75% {
+        transform: translateY(-25px) rotate(3deg) scale(1.05);
+        opacity: 0.2;
+    }
+}
+
+/* Enhanced button styles */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: var(--gradient-neon);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-neon);
+}
+
+.btn-primary:hover {
+    box-shadow: var(--shadow-neon-hover);
+}
+
+/* Form input dark theme styles */
+.form-input,
+.form-select,
+.chat-input {
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.form-input::placeholder,
+.chat-input::placeholder {
+    color: var(--color-text-light);
+}
+
+.form-input:focus,
+.form-select:focus,
+.chat-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-glow);
+    background: var(--color-bg-card);
+}
+
+/* Quiz option dark theme */
+.quiz-option {
+    background: var(--color-bg-secondary);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.quiz-option:hover {
+    border-color: var(--color-primary);
+    background: var(--color-bg-card);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+/* Section card dark theme */
+.section-card {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+/* Profile header gradient */
+.profile-header {
+    background: var(--gradient-neon);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Course hero dark theme */
+.course-hero {
+    background: var(--gradient-neon);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+    animation: pan 30s linear infinite;
+}
+
+@keyframes pan {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100px 100px;
+    }
+}
+
+/* AI FAB with pulsing glow */
+.ai-fab {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-neon);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.ai-fab:hover {
+    box-shadow: var(--shadow-neon-hover);
+    animation: none;
+}
+
+/* Chat container dark theme */
+.chat-container {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.chat-header {
+    background: var(--gradient-accent);
+}
+
+.message-bubble {
+    background: var(--color-bg-secondary);
+}
+
+.message.user .message-bubble {
+    background: var(--gradient-neon);
+    color: white;
+}
+
+/* Timetable slot dark theme */
+.timetable-slot {
+    background: var(--color-bg-secondary);
+    border-left-color: var(--color-primary);
+}
+
+/* Resource tab improvements */
+.resource-tab {
+    background: var(--color-bg-secondary);
+}
+
+.resource-tab:hover,
+.resource-tab.active {
+    background: var(--gradient-neon);
+    box-shadow: var(--shadow-neon);
+}
+
+/* Resource item dark theme */
+.resource-item {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.resource-item:hover {
+    background: var(--color-bg-card);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+/* Profile info items */
+.profile-info-item,
+.stat-item {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+/* Achievement badge dark theme */
+.achievement-badge {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.achievement-badge.earned {
+    background: var(--gradient-neon);
+    box-shadow: var(--shadow-neon);
+}
+
+/* Roadmap milestone dark theme */
+.milestone-content {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.milestone-icon {
+    background: var(--color-bg-secondary);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.milestone-current .milestone-icon {
+    background: var(--gradient-neon);
+    box-shadow: var(--shadow-neon);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Saved course item dark theme */
+.saved-course-item {
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.saved-course-item:hover {
+    background: var(--gradient-neon);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-neon);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-light);
+    box-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+/* Selection styling */
+::selection {
+    background: var(--color-primary);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Glow text effect for headings */
+h1,
+h2 {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Logo text special styling */
+.logo-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px var(--color-primary-glow));
+}
+
+/* Nav title glow */
+.nav-title {
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+/* Active nav item */
+.nav-item.active {
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary-glow);
+}
